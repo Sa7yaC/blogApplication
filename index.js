@@ -39,6 +39,14 @@ app.post('/edit', (req, res) => {
     }
     res.render('index3', { blog_content :blog }); // Pass updated blog array
 });
+app.post('/edit', (req, res) => {
+    const blogNo = parseInt(req.body.blogNumber, 10);
+    const blogCt = req.body.blogText;
+    if (!isNaN(blogNo) && blogCt && blogNo >= 0 && blogNo < blog.length) {
+        blog[blogNo] = blogCt; // Update blog
+    }
+    res.render('index3', { blog_content :blog }); // Pass updated blog array
+});
 app.listen(port, ()=>{
     console.log(`Server is running on ${port}.`);
 });
