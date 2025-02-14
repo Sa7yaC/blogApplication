@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deleting Blog</title>
+</head>
+<body>
+    <%- include('index3.ejs') %>
+    <form action="/delete" method="post">
+        <label for="delte">Enter the blog no you want to delete.</label>
+        <input id="delete" name="delete">
+        <button id="deleteButton">Delete Vlog</button>
+    </form>
+    <h3><% for( let index = 0; index < blog_content.length; index++ ) { %>
+        <%= blog_content[index] %>
+    <% } %></h3>
+</body>
+</html>
